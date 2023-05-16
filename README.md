@@ -45,9 +45,11 @@ export default {
 
 ## Props 参数列表
 
-| prop      | 作用 | 默认值 | 类型   |
-| --------- | ---- | ------ | ------ |
-| data      | 数据 | []     | Array  |
-| color     | 颜色 | []     | Array  |
-| speed     | 速度 | 400    | Number |
-| direction | 方向 | '-1'   | String |
+| prop       | 作用     | 默认值 | 类型    |
+| ---------- | -------- | ------ | ------- |
+| data       | 数据     | []     | Array   |
+| color      | 颜色     | []     | Array   |
+| speed      | 速度     | 400    | Number  |
+| direction  | 方向     | '-1'   | String  |
+| isShowTips | 显示提示 | true   | Boolean |
+| isShowVal  | 显示数量 | true   | Boolean |

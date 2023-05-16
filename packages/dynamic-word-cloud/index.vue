@@ -2,7 +2,7 @@
  * @Author: LYM
  * @Date: 2023-05-15 17:16:25
  * @LastEditors: LYM
- * @LastEditTime: 2023-05-16 11:00:16
+ * @LastEditTime: 2023-05-16 13:58:50
  * @Description: 动态词云组件
 -->
 
@@ -17,14 +17,19 @@
         color: color[index % color?.length],
         ...state.contentEle[index]?.style,
       }"
-      @mouseenter="stop"
-      @mouseleave="start(index, item)"
+      @mouseenter="stop(item)"
+      @mouseleave="start(index)"
       @click="wordClick(item)"
     >
       {{ item.name }}
     </span>
-    <div class="tooltip" v-show="state.isShowTip" :style="tooltipStyle(x, y, isOutside)">
-      {{ state.curItem.name }}
+    <div
+      class="tooltip"
+      v-if="isShowTips && state.isShowTip"
+      :style="tooltipStyle(x, y, isOutside)"
+    >
+      <span class="name"> {{ state.curItem.name }}</span>
+      <span class="value" v-if="isShowVal"> ：{{ state.curItem.value }} </span>
     </div>
   </div>
 </template>
@@ -73,6 +78,16 @@ export default defineComponent({
       required: false,
       type: String,
       default: "-1",
+    },
+    isShowVal: {
+      required: false,
+      type: Boolean,
+      default: true,
+    },
+    isShowTips: {
+      required: false,
+      type: Boolean,
+      default: true,
     },
   },
   setup(props, { emit }) {
@@ -190,16 +205,16 @@ export default defineComponent({
     };
 
     // 鼠标移入暂停
-    const stop = () => {
+    const stop = (item: any) => {
       state.curIndex = -1;
       state.isShowTip = true;
+      state.curItem = item;
       window.cancelAnimationFrame(state.animateID);
     };
 
     // 鼠标离开恢复
-    const start = (index: number, item: any) => {
+    const start = (index: number) => {
       state.curIndex = index;
-      state.curItem = item;
       state.isShowTip = false;
       animate();
     };
@@ -220,10 +235,11 @@ export default defineComponent({
     const tooltipStyle = computed(() => {
       return (x: number, y: number, isOutside: boolean) => {
         return (
-          isOutside && {
+          isOutside &&
+          ({
             left: x + "px",
             top: y + "px",
-          }
+          } as any)
         );
       };
     });
