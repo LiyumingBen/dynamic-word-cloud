@@ -30,10 +30,19 @@ declare const _default: import("vue").DefineComponent<{
         contentEle: any;
         animateID: any;
         curIndex: number;
+        curItem: any;
+        isShowTip: boolean;
     };
     stop: () => void;
-    start: (index: number) => void;
+    start: (index: number, item: any) => void;
     wordClick: (item: any) => void;
+    tooltipStyle: import("vue").ComputedRef<(x: number, y: number, isOutside: boolean) => false | {
+        left: string;
+        top: string;
+    }>;
+    x: import("vue").Ref<number>;
+    y: import("vue").Ref<number>;
+    isOutside: import("vue").Ref<boolean>;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     data: {
         required: true;

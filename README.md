@@ -1,11 +1,11 @@
-# vue3-web-share
+# dynamic-word-cloud-vue3
 
 ## 快速开始
 
 #### 安装
 
 ```bash
-npm i vue3-web-share -S
+npm i dynamic-word-cloud-vue3 -S
 ```
 
 #### 引入
@@ -14,7 +14,7 @@ npm i vue3-web-share -S
 
 ```js
 import DynamicWordCloudVue3 from "dynamic-word-cloud-vue3";
-import "dynamic-word-cloud/lib/index.css";
+import "dynamic-word-cloud-vue3/lib/index.css";
 ```
 
 或按组件单个引用，在`.vue`文件中
@@ -22,7 +22,7 @@ import "dynamic-word-cloud/lib/index.css";
 ```vue
 <script>
 import { DynamicWordCloudVue3 } from "dynamic-word-cloud-vue3";
-import "dynamic-word-cloud/lib/index.css";
+import "dynamic-word-cloud-vue3/lib/index.css";
 
 export default {
   name: "viewName",
