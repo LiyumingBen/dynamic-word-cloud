@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <dynamic-word-cloud-vue3 :data="state.data" :color="state.color"></dynamic-word-cloud-vue3>
+    <dynamic-word-cloud-vue3 :data="state.data" :color="state.color" @word-click="handleWordClick"></dynamic-word-cloud-vue3>
   </div>
 </template>
 
@@ -244,8 +244,14 @@ export default defineComponent({
       color: ["#2D4DB6", "#04B67C", "#D1AF07", "#E27914", "#CB4A4D", "#B02690"],
     });
 
+     // 点击词云
+     const handleWordClick = (item: any) => {
+      console.log(item);
+    };
+
     return {
       state,
+      handleWordClick
     };
   },
 });

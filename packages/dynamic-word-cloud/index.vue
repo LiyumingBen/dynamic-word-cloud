@@ -2,7 +2,7 @@
  * @Author: LYM
  * @Date: 2023-05-15 17:16:25
  * @LastEditors: LYM
- * @LastEditTime: 2023-05-16 13:58:50
+ * @LastEditTime: 2023-05-16 16:14:20
  * @Description: 动态词云组件
 -->
 
@@ -220,7 +220,7 @@ export default defineComponent({
     };
 
     const wordClick = (item: any) => {
-      emit("wordClick", item);
+      emit("word-click", item);
     };
 
     onMounted(() => {
