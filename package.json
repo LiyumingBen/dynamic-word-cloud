@@ -1,6 +1,6 @@
 {
   "name": "dynamic-word-cloud-vue3",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "description": "动态词云",
   "main": "dist/index.main.js",

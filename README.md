@@ -13,7 +13,7 @@ npm i vue3-web-share -S
 全局引入，在 main.js 中
 
 ```js
-import DynamicWordCloudVue3 from "vue3-web-share";
+import DynamicWordCloudVue3 from "dynamic-word-cloud-vue3";
 import "dynamic-word-cloud/lib/index.css";
 ```
 
@@ -21,7 +21,7 @@ import "dynamic-word-cloud/lib/index.css";
 
 ```vue
 <script>
-import { DynamicWordCloudVue3 } from "vue3-web-share";
+import { DynamicWordCloudVue3 } from "dynamic-word-cloud-vue3";
 import "dynamic-word-cloud/lib/index.css";
 
 export default {
@@ -38,7 +38,7 @@ export default {
 ```vue
 <template lang="ts">
  <div class="wrap">
-  <dynamic-word-cloud :data="state.data"></dynamic-word-cloud>
+  <dynamic-word-cloud-vue3 :data="state.data"></dynamic-word-cloud-vue3>
  </div>
 </template>
 ```
